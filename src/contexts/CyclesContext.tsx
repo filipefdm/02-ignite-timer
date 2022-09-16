@@ -7,7 +7,6 @@ import {
   useEffect,
 } from "react";
 import {
-  ActionTypes,
   addNewCycleAction,
   interruptCurrentCycleAction,
   markCurrentCycleAsFinishedAction,
@@ -53,6 +52,11 @@ export function CyclesContextProvider({
       if (storedStateAsJson) {
         return JSON.parse(storedStateAsJson);
       }
+
+      return {
+        cycles: [],
+        activeCycleId: null,
+      };
     }
   );
 
